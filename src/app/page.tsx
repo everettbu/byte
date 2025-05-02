@@ -10,7 +10,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-background/70 to-background z-0" />
         <div className="text-center space-y-6 relative z-10 -mt-32">
           <h1 className="text-6xl font-bold text-white tracking-tight">
-            Welcome to Weekly Bytes.
+            Hi mom!
           </h1>
         </div>
       </section>
