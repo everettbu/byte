@@ -52,18 +52,18 @@ export default function RootLayout({
               <div className="flex justify-between items-center h-16">
                 <div className="flex-shrink-0">
                   <Link href="/" className="text-xl font-semibold text-foreground hover:text-primary transition-colors">
-                    Everett Butler
+                    Weekly Bytes
                   </Link>
                 </div>
                 <div className="hidden md:flex items-center space-x-8">
                   <Link href="photos" className="text-muted-foreground hover:text-primary transition-colors">
-                    Photos
+                    News
                   </Link>
                   <Link href="travel" className="text-muted-foreground hover:text-primary transition-colors">
-                    Travel
+                    Tips
                   </Link>
                   <Link href="gallery" className="text-muted-foreground hover:text-primary transition-colors">
-                    Gallery
+                    Hacks
                   </Link>
                 </div>
               </div>
