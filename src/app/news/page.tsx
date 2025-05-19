@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 interface NewsItem {
   id: number
@@ -87,11 +88,15 @@ export default function NewsPage() {
               key={item.id}
               className="bg-card border border-border rounded-xl overflow-hidden shadow hover:shadow-lg transition-shadow"
             >
-              <img
-                src={item.image}
-                alt=""
-                className="h-40 w-full object-cover"
-              />
+              <div className="relative h-40 w-full">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
               <div className="p-6 space-y-3">
                 <div className="flex justify-between items-start">
                   <h2 className="text-xl font-semibold">{item.title}</h2>
