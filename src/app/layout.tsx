@@ -43,11 +43,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true} className={inter.className}>
-        {/* Nav Bar - Only show if not on dategate page */}
-        {pathname !== '/dategate' && (
-          <nav className={`border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 fixed w-full top-0 z-10 transition-transform duration-300 ${
-            isVisible ? 'translate-y-0' : '-translate-y-full'
-          }`}>
             <div className="container mx-auto px-4">
               <div className="flex justify-between items-center h-16">
                 <div className="flex-shrink-0">
@@ -56,25 +51,18 @@ export default function RootLayout({
                   </Link>
                 </div>
                 <div className="hidden md:flex items-center space-x-8">
-                  <Link href="photos" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="/news" className="text-muted-foreground hover:text-primary transition-colors">
                     News
                   </Link>
-                  <Link href="travel" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="/tips" className="text-muted-foreground hover:text-primary transition-colors">
                     Tips
                   </Link>
-                  <Link href="gallery" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="/hacks" className="text-muted-foreground hover:text-primary transition-colors">
                     Hacks
                   </Link>
                 </div>
               </div>
             </div>
-          </nav>
-        )}
-
-        {/* Main Content - Adjust padding only when nav is present */}
-        <main className={pathname !== '/dategate' ? 'pt-16' : ''}>
-          {children}
-        </main>
       </body>
     </html>
   );
