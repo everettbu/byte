@@ -1,5 +1,7 @@
 import React from "react";
-
+import Hero from "../components/Hero";
+import Features from "../components/Features";
+import Subscribe from "../components/Subscribe";
 
 export default function Home() {
   return (
@@ -14,7 +16,12 @@ export default function Home() {
           </h1>
         </div>
       </section>
-  
+
+      {/* Features Section */}
+      <Features />
+
+      {/* Subscribe Section */}
+      <Subscribe />
 
       {/* Footer */}
       <footer className="border-t border-border/40 py-8 bg-background">
