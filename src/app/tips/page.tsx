@@ -46,8 +46,8 @@ export default function TipsPage() {
     : tips.filter(tip => tip.category === selectedCategory)
 
   return (
-    <main className="min-h-screen p-8">
-      <h1 className="text-4xl font-bold mb-8">Daily Tips</h1>
+    <main className="min-h-screen p-8 bg-background">
+      <h1 className="text-4xl font-bold mb-8 text-foreground">Daily Tips</h1>
       
       <div className="mb-6">
         <div className="flex gap-4">
@@ -57,8 +57,8 @@ export default function TipsPage() {
               onClick={() => setSelectedCategory(category)}
               className={`px-4 py-2 rounded-full ${
                 selectedCategory === category
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-200 text-gray-700'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
               }`}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -71,11 +71,11 @@ export default function TipsPage() {
         {filteredTips.map(tip => (
           <div
             key={tip.id}
-            className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            className="bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-border"
           >
-            <h2 className="text-xl font-semibold mb-2">{tip.title}</h2>
-            <p className="text-gray-600">{tip.description}</p>
-            <span className="inline-block mt-4 px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600">
+            <h2 className="text-xl font-semibold mb-2 text-card-foreground">{tip.title}</h2>
+            <p className="text-muted-foreground">{tip.description}</p>
+            <span className="inline-block mt-4 px-3 py-1 bg-secondary rounded-full text-sm text-secondary-foreground">
               {tip.category}
             </span>
           </div>

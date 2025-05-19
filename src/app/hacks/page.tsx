@@ -55,12 +55,12 @@ export default function HacksPage() {
   })
 
   return (
-    <main className="min-h-screen p-8 bg-gray-50">
-      <h1 className="text-4xl font-bold mb-8">Life Hacks</h1>
+    <main className="min-h-screen p-8 bg-background">
+      <h1 className="text-4xl font-bold mb-8 text-foreground">Life Hacks</h1>
       
       <div className="mb-6 space-y-4">
         <div>
-          <h3 className="text-lg font-medium mb-2">Difficulty</h3>
+          <h3 className="text-lg font-medium mb-2 text-foreground">Difficulty</h3>
           <div className="flex gap-4">
             {difficulties.map(difficulty => (
               <button
@@ -68,8 +68,8 @@ export default function HacksPage() {
                 onClick={() => setSelectedDifficulty(difficulty)}
                 className={`px-4 py-2 rounded-lg ${
                   selectedDifficulty === difficulty
-                    ? 'bg-purple-500 text-white'
-                    : 'bg-white text-gray-700 border border-gray-200'
+                    ? 'bg-primary text-primary-foreground'
+                    : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
                 }`}
               >
                 {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
@@ -79,7 +79,7 @@ export default function HacksPage() {
         </div>
 
         <div>
-          <h3 className="text-lg font-medium mb-2">Category</h3>
+          <h3 className="text-lg font-medium mb-2 text-foreground">Category</h3>
           <div className="flex gap-4">
             {categories.map(category => (
               <button
@@ -87,8 +87,8 @@ export default function HacksPage() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-lg ${
                   selectedCategory === category
-                    ? 'bg-purple-500 text-white'
-                    : 'bg-white text-gray-700 border border-gray-200'
+                    ? 'bg-primary text-primary-foreground'
+                    : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
                 }`}
               >
                 {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -102,19 +102,19 @@ export default function HacksPage() {
         {filteredHacks.map(hack => (
           <div
             key={hack.id}
-            className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+            className="bg-card p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-border"
           >
-            <h2 className="text-xl font-semibold mb-2">{hack.title}</h2>
-            <p className="text-gray-600 mb-4">{hack.description}</p>
+            <h2 className="text-xl font-semibold mb-2 text-card-foreground">{hack.title}</h2>
+            <p className="text-muted-foreground mb-4">{hack.description}</p>
             <div className="flex gap-2">
               <span className={`inline-block px-3 py-1 rounded-full text-sm ${
-                hack.difficulty === 'easy' ? 'bg-green-100 text-green-700' :
-                hack.difficulty === 'medium' ? 'bg-yellow-100 text-yellow-700' :
-                'bg-red-100 text-red-700'
+                hack.difficulty === 'easy' ? 'bg-green-900/50 text-green-200' :
+                hack.difficulty === 'medium' ? 'bg-yellow-900/50 text-yellow-200' :
+                'bg-red-900/50 text-red-200'
               }`}>
                 {hack.difficulty}
               </span>
-              <span className="inline-block px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">
+              <span className="inline-block px-3 py-1 bg-secondary rounded-full text-sm text-secondary-foreground">
                 {hack.category}
               </span>
             </div>
