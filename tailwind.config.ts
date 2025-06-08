@@ -6,6 +6,7 @@ export default {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./content/**/*.{md,mdx}",
   ],
   theme: {
   	extend: {
@@ -55,8 +56,36 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#2E2E2E',
+            h1: {
+              color: '#002E22',
+            },
+            h2: {
+              color: '#002E22',
+            },
+            h3: {
+              color: '#002E22',
+            },
+            h4: {
+              color: '#002E22',
+            },
+            strong: {
+              color: '#002E22',
+            },
+            a: {
+              color: '#6B8F7F',
+              '&:hover': {
+                color: '#002E22',
+              },
+            },
+          },
+        },
+      },
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;

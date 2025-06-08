@@ -4,35 +4,38 @@
 
 @layer base {
   :root {
-    /* Deep blue-black background with blue tinted foreground */
-    --background: 222 47% 8%;      /* #070c1f - slightly lighter dark blue */
-    --foreground: 210 40% 98%;     /* #F8FAFC - blue tinted white */
+    /* Precise color mapping based on user notes */
+    --background: 0 0% 100%;         /* #FFFFFF - White background */
+    --foreground: 0 0% 18%;          /* #2E2E2E - Dark Gray for text */
     
-    --card: 222 47% 5%;            /* #050913 - slightly lighter than background */
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;               /* #FFFFFF - White background */
+    --card-foreground: 0 0% 18%;     /* #2E2E2E - Dark Gray for text */
     
-    --popover: 222 47% 5%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;            /* #FFFFFF - White background */
+    --popover-foreground: 0 0% 18%;  /* #2E2E2E - Dark Gray for text */
     
-    /* Accent colors */
-    --primary: 217 91% 60%;        /* #3B82F6 - vibrant blue */
-    --primary-foreground: 210 40% 98%;
+    /* Buttons and highlights */
+    --primary: 75 100% 50%;          /* #D4FF00 - Chartreuse for buttons, highlights */
+    --primary-foreground: 0 0% 0%;   /* Black text on chartreuse buttons */
     
-    --secondary: 217 19% 27%;      /* #334155 - muted blue-gray */
-    --secondary-foreground: 210 40% 98%;
+    /* UI elements */
+    --secondary: 165 15% 49%;        /* #6B8F7F - Mid Gray-Green for UI elements */
+    --secondary-foreground: 0 0% 100%; /* White text on UI elements */
     
-    --muted: 217 19% 27%;
-    --muted-foreground: 215 20% 65%;  /* #94A3B8 - subtle blue-gray */
+    /* Text and overlays */
+    --muted: 0 0% 18%;               /* #2E2E2E - Dark Gray for overlays */
+    --muted-foreground: 0 0% 50%;    /* Lighter gray for secondary text */
     
-    --accent: 217 91% 60%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 75 100% 50%;           /* #D4FF00 - Chartreuse for highlights */
+    --accent-foreground: 0 0% 0%;    /* Black text on highlights */
     
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
     
-    --border: 217 19% 27%;
-    --input: 217 19% 27%;
-    --ring: 216 34% 17%;
+    /* UI elements */
+    --border: 165 15% 49%;           /* #6B8F7F - Mid Gray-Green for UI elements */
+    --input: 165 15% 49%;            /* #6B8F7F - Mid Gray-Green for UI elements */
+    --ring: 75 100% 50%;             /* #D4FF00 - Chartreuse for highlights */
     
     --radius: 0.5rem;
   }
@@ -44,5 +47,16 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  
+  /* Bold headers using Dark Green */
+  h1, h2, h3, h4, h5, h6 {
+    color: #002E22; /* #002E22 - Dark Green for bold headers */
+    font-weight: bold;
+  }
+  
+  /* Ensure buttons use chartreuse */
+  button {
+    @apply bg-primary text-primary-foreground;
   }
 }

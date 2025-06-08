@@ -38,42 +38,48 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true} className={inter.className}>
-        <nav className={`fixed w-full bg-white/80 backdrop-blur-md z-50 transition-transform duration-300 ${
+        <nav className={`fixed w-full bg-background/95 backdrop-blur-md z-[100] transition-transform duration-300 border-b border-border ${
           isVisible ? 'translate-y-0' : '-translate-y-full'
         }`}>
           <div className="container mx-auto px-4">
-            <div className="flex justify-between items-center h-16">
-              <div className="flex-shrink-0">
-                <Link href="/" className="text-xl font-semibold text-gray-900 hover:text-gray-600 transition-colors">
+            <div className="flex flex-col items-center justify-center py-4">
+              <div className="mb-4">
+                <Link href="/" className="text-3xl font-bold hover:text-primary transition-colors" style={{color: '#002E22'}}>
                   Weekly Bytes
                 </Link>
               </div>
-              <div className="hidden md:flex items-center space-x-8">
+              <div className="flex items-center space-x-8">
                 <Link 
-                  href="/news" 
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  href="/money-finance" 
+                  className="text-foreground hover:text-primary transition-colors"
                 >
-                  News
+                  Money & Finance
                 </Link>
                 <Link 
-                  href="/tips" 
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  href="/marketing-growth" 
+                  className="text-foreground hover:text-primary transition-colors"
                 >
-                  Tips
+                  Marketing & Growth
                 </Link>
                 <Link 
-                  href="/hacks" 
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  href="/tools-tech" 
+                  className="text-foreground hover:text-primary transition-colors"
                 >
-                  Hacks
+                  Tools & Tech
+                </Link>
+                <Link 
+                  href="/trends-news" 
+                  className="text-foreground hover:text-primary transition-colors"
+                >
+                  Trends & News
                 </Link>
               </div>
             </div>
           </div>
         </nav>
         
-        {/* Add padding-top to account for fixed navbar */}
-        <div className="pt-16">
+        {/* Add padding-top to account for fixed navbar - increased for taller header */}
+        <div className="pt-28">
           {children}
         </div>
       </body>
