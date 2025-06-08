@@ -1,13 +1,17 @@
 'use client'
 
+import Hero from '../components/Hero'
 import Subscribe from '../components/Subscribe'
 import TopFive from '../components/TopFive'
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero/Subscribe Section */}
+      {/* Subscribe Banner */}
       <Subscribe />
+      
+      {/* Hero Section */}
+      <Hero />
 
       <TopFive />
 

@@ -57,11 +57,14 @@ const otherPosts = topPosts.filter(post => !post.featured);
 
 export default function TopFive() {
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">This Week&apos;s Top 5</h2>
-          <p className="text-xl text-muted-foreground">
+    <section className="pt-12 pb-20 px-4">
+      <div className="container mx-auto">
+        {/* Subtle separator */}
+        <div className="w-24 h-px bg-border mx-auto mb-12"></div>
+        
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">This Week&apos;s Top 5</h2>
+          <p className="text-lg text-muted-foreground">
             The most impactful insights our community is talking about
           </p>
         </div>
