@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const topPosts = [
   {
@@ -68,34 +70,38 @@ export default function TopFive() {
           {/* Featured Post */}
           {featuredPost && (
             <Link href={featuredPost.link} className="group block mb-12">
-              <div className="p-8 border border-border rounded-lg bg-card hover:bg-card/80 transition-all duration-200 hover:border-secondary">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center">
-                    <span className="text-3xl font-bold" style={{color: '#002E22'}}>
-                      1
-                    </span>
+              <Card className="p-8 hover:bg-card/80 transition-all duration-200 hover:border-secondary">
+                <CardHeader className="p-0">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center">
+                      <span className="text-3xl font-bold" style={{color: '#002E22'}}>
+                        1
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm">
+                      <Badge variant="secondary" className="font-medium">
+                        {featuredPost.category}
+                      </Badge>
+                      <Badge variant="outline" className="text-foreground font-medium">
+                        {featuredPost.trend}
+                      </Badge>
+                      <span className="text-muted-foreground">
+                        {featuredPost.readTime}
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3 text-sm">
-                    <span className="px-3 py-1 rounded-full bg-secondary/50 text-secondary-foreground font-medium">
-                      {featuredPost.category}
-                    </span>
-                    <span className="text-foreground font-medium">
-                      {featuredPost.trend}
-                    </span>
-                    <span className="text-muted-foreground">
-                      {featuredPost.readTime}
-                    </span>
-                  </div>
-                </div>
+                  
+                  <h3 className="text-3xl font-bold mb-4 group-hover:opacity-80 transition-opacity" style={{color: '#002E22'}}>
+                    {featuredPost.title}
+                  </h3>
+                </CardHeader>
                 
-                <h3 className="text-3xl font-bold mb-4 group-hover:opacity-80 transition-opacity" style={{color: '#002E22'}}>
-                  {featuredPost.title}
-                </h3>
-                
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  {featuredPost.excerpt}
-                </p>
-              </div>
+                <CardContent className="p-0">
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    {featuredPost.excerpt}
+                  </p>
+                </CardContent>
+              </Card>
             </Link>
           )}
 
@@ -103,37 +109,41 @@ export default function TopFive() {
           <div className="grid md:grid-cols-2 gap-6">
             {otherPosts.map((post, index) => (
               <Link key={post.id} href={post.link} className="group block">
-                <div className="flex items-start gap-4 p-6 border border-border rounded-lg bg-card hover:bg-card/80 transition-all duration-200 hover:border-secondary">
-                  <div className="flex-shrink-0">
-                    <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
-                      <span className="text-lg font-bold" style={{color: '#002E22'}}>
-                        {index + 2}
-                      </span>
+                <Card className="hover:bg-card/80 transition-all duration-200 hover:border-secondary">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
+                          <span className="text-lg font-bold" style={{color: '#002E22'}}>
+                            {index + 2}
+                          </span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex-1 space-y-2">
+                        <div className="flex items-center gap-2 text-xs flex-wrap">
+                          <Badge variant="secondary" className="text-xs">
+                            {post.category}
+                          </Badge>
+                          <Badge variant="outline" className="text-xs text-foreground font-medium">
+                            {post.trend}
+                          </Badge>
+                          <span className="text-muted-foreground">
+                            {post.readTime}
+                          </span>
+                        </div>
+                        
+                        <h3 className="text-lg font-semibold group-hover:opacity-80 transition-opacity" style={{color: '#002E22'}}>
+                          {post.title}
+                        </h3>
+                        
+                        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                          {post.excerpt}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div className="flex-1 space-y-2">
-                    <div className="flex items-center gap-2 text-xs">
-                      <span className="px-2 py-1 rounded-full bg-secondary/50 text-secondary-foreground">
-                        {post.category}
-                      </span>
-                      <span className="text-foreground font-medium">
-                        {post.trend}
-                      </span>
-                      <span className="text-muted-foreground">
-                        {post.readTime}
-                      </span>
-                    </div>
-                    
-                    <h3 className="text-lg font-semibold group-hover:opacity-80 transition-opacity" style={{color: '#002E22'}}>
-                      {post.title}
-                    </h3>
-                    
-                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
-                      {post.excerpt}
-                    </p>
-                  </div>
-                </div>
+                  </CardContent>
+                </Card>
               </Link>
             ))}
           </div>

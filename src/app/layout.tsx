@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { BackgroundTexture } from "@/components/BackgroundTexture";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true} className={inter.className}>
+        <BackgroundTexture />
         <nav className={`fixed w-full bg-background/95 backdrop-blur-md z-[100] transition-transform duration-300 border-b border-border ${
           isVisible ? 'translate-y-0' : '-translate-y-full'
         }`}>

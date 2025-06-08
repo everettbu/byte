@@ -5,13 +5,13 @@
 @layer base {
   :root {
     /* Precise color mapping based on user notes */
-    --background: 0 0% 100%;         /* #FFFFFF - White background */
+    --background: 0 0% 90%;          /* #e5e5e5 - Light gray background */
     --foreground: 0 0% 18%;          /* #2E2E2E - Dark Gray for text */
     
-    --card: 0 0% 100%;               /* #FFFFFF - White background */
+    --card: 0 0% 90%;                /* #e5e5e5 - Light gray background */
     --card-foreground: 0 0% 18%;     /* #2E2E2E - Dark Gray for text */
     
-    --popover: 0 0% 100%;            /* #FFFFFF - White background */
+    --popover: 0 0% 90%;             /* #e5e5e5 - Light gray background */
     --popover-foreground: 0 0% 18%;  /* #2E2E2E - Dark Gray for text */
     
     /* Buttons and highlights */

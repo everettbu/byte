@@ -1,4 +1,6 @@
 import React from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export default function Subscribe() {
   return (
@@ -17,17 +19,17 @@ export default function Subscribe() {
           </div>
           
           <form className="flex flex-col sm:flex-row gap-3">
-            <input
+            <Input
               type="email"
               placeholder="Your Email"
-              className="px-4 py-2 rounded-md bg-white border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary w-56"
+              className="w-56 bg-background border-gray-300 placeholder-gray-500 text-gray-900 focus:ring-primary"
             />
-            <button
+            <Button
               type="submit"
-              className="px-6 py-2 rounded-md bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors whitespace-nowrap"
+              className="px-6 py-2 bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors whitespace-nowrap"
             >
               Subscribe
-            </button>
+            </Button>
           </form>
         </div>
       </div>
