@@ -46,7 +46,7 @@ export default function RootLayout({
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center justify-center py-4">
               <div className="mb-4">
-                <Link href="/" className="text-3xl font-bold hover:text-primary transition-colors" style={{color: '#002E22'}}>
+                <Link href="/" className="text-5xl font-bold hover:text-primary transition-colors pb-4 block" style={{color: '#002E22'}}>
                   Weekly Bytes
                 </Link>
               </div>
@@ -80,8 +80,8 @@ export default function RootLayout({
           </div>
         </nav>
         
-        {/* Add padding-top to account for fixed navbar - increased for taller header */}
-        <div className="pt-28">
+        {/* Add padding-top to account for fixed navbar */}
+        <div className="pt-32">
           {children}
         </div>
       </body>

@@ -42,16 +42,13 @@ export default function Subscribe() {
           85% {
             transform: translateX(-100%);
           }
-          85.1% {
-            transform: translateX(100vw);
-          }
           100% {
-            transform: translateX(100vw);
+            transform: translateX(-100%);
           }
         }
         
         .animate-scroll {
-          animation: scroll 12s linear infinite;
+          animation: scroll 20s linear infinite;
         }
       `}</style>
     </section>
